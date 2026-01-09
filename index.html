@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
-
     <!-- CSS External -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Tailwind CSS -->
@@ -19,14 +18,46 @@
     <!-- Main Content -->
     <main>
         <section>
-            <input type="text" id="Todo-Input" placeholder="Enter a new todo item">
+            <form>
+                <input class="border rounded p-1" type="text" id="todo-input" placeholder="Enter a new todo item">
+                
+                <input class="border rounded p-1" type="date" id="todo-date" placeholder="Enter due date">
+            </form>
 
-            <input type="date" id="Todo-Date" placeholder="Enter due date">
+            <button onclick="addTodo()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-1.5 px-39 rounded" type="button">Add</button>
         </section>
+
+        <section class="flex pt-4 justify-between">
+                <button onclick="removeTodo()" class="bg-red-500 hover:bg-red-700 text-white font-semibold py-1 px-2 rounded" type="button">Clear All Todos</button>
+                <button onclick="sortByDateNew()"
+                    class="bg-purple-500 hover:bg-purple-700 text-white font-semibold py- px-2 rounded"
+                    type="button">
+                    Oldest Date
+                </button>
+
+                <button onclick="sortByDateOld()"
+                    class="bg-indigo-500 hover:bg-indigo-700 text-white font-semibold py-1 px-2 rounded"
+                    type="button">
+                    Newest Date
+                </button>
+        </section>
+
+        <section>
+            <header>
+                <h1 class="text-2xl font-semibold pt-8 text-center">List of Todos</h1>
+            </header>
+
+            <ul class="pt-3" id="todo-list">
+                <li>No todos available</li>
+            </ul>
+        </section>
+
     </main>
 
     <!-- Footer Content -->
-    <footer></footer>
+    <footer>
+        <p class="text-center pt-5">© 2026 Feb's Todo List</p>
+    </footer>
 
     <!-- JS External -->
     <script src="js/script.js"></script>
