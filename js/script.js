@@ -35,6 +35,12 @@ function renderTodos () {
     });
 }
 
+function removeTodo() {
+    todos= [];
+
+    renderTodos();
+}
+
 function sortByDateNew() {
   todos.sort((a, b) => new Date(a.date) - new Date(b.date));
   renderTodos();
